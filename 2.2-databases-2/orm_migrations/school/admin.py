@@ -1,13 +1,14 @@
 from django.contrib import admin
 
-from .models import Student, Teacher
+from .models import Student, Teachers
 
 
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['id', 'name', 'group']
+    list_filter = ['name', 'teacher', 'group']
 
 
-@admin.register(Teacher)
+@admin.register(Teachers)
 class TeacherAdmin(admin.ModelAdmin):
     pass

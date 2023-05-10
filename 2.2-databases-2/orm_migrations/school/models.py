@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Teacher(models.Model):
+class Teachers(models.Model):
     name = models.CharField(max_length=30, verbose_name='Имя')
     subject = models.CharField(max_length=10, verbose_name='Предмет')
 
@@ -15,7 +15,7 @@ class Teacher(models.Model):
 
 class Student(models.Model):
     name = models.CharField(max_length=30, verbose_name='Имя')
-    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    teacher = models.ManyToManyField(Teachers, related_name='students')
     group = models.CharField(max_length=10, verbose_name='Класс')
 
     class Meta:
