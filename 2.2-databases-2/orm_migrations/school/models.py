@@ -26,6 +26,3 @@ class Student(models.Model):
         return self.name
 
 
-# class Group(models.Model):
-#     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='man')
-#     teacher = models.ForeignKey(Teachers, on_delete=models.CASCADE, related_name='man')
