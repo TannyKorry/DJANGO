@@ -1,12 +1,14 @@
 from django.views.generic import ListView
 from django.shortcuts import render
 
-from .models import Student
+from .models import Student, Teachers
 
 
 def students_list(request):
     template = 'school/students_list.html'
     stud = Student.objects.all()
+    # stud = Student.objects.all().prefetch_related('teacher')
+
     context = {
         'object_list': stud
     }
