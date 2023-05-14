@@ -10,5 +10,5 @@ class StudentAdmin(admin.ModelAdmin):
 
 
 @admin.register(Teachers)
-class TeacherAdmin(admin.ModelAdmin):
-    pass
+class TeachersAdmin(admin.ModelAdmin):
+    list_display = ['name', 'subject']

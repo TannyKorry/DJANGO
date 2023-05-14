@@ -15,12 +15,13 @@ class Teachers(models.Model):
 
 class Student(models.Model):
     name = models.CharField(max_length=30, verbose_name='Имя')
-    teacher = models.ManyToManyField(Teachers, related_name='teachers', verbose_name='Преподаватель')
+    teacher = models.ManyToManyField(Teachers, related_name='students', verbose_name='Преподаватель')
     group = models.CharField(max_length=10, verbose_name='Класс')
 
     class Meta:
         verbose_name = 'Ученик'
         verbose_name_plural = 'Ученики'
+        ordering = ['group']
 
     def __str__(self):
         return self.name
