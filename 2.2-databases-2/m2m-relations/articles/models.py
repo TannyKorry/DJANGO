@@ -31,9 +31,12 @@ class Article(models.Model):
 
 
 class RubricArticles(models.Model):
-    tag = models.ForeignKey(Rubric, on_delete=models.CASCADE, related_name='articl')
-    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='articl')
+    tag = models.ForeignKey(Rubric, on_delete=models.CASCADE, related_name='scopes')
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='scopes')
     is_main = models.BooleanField(verbose_name='Основной')
+
+    class Meta:
+        ordering = ['-is_main', 'tag__name', ]
 
     def __str__(self):
         return f'{self.tag} {self.article}'
