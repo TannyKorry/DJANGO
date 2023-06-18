@@ -48,4 +48,3 @@ class AdvertisementSerializer(serializers.ModelSerializer):
             if Advertisement.objects.filter(creator=creator, status='OPEN').count() > 10:
                 raise ValidationError('Вы превысили количество открытых объявлений')
         return data
-
