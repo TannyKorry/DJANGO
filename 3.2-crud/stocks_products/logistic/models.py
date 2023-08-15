@@ -20,8 +20,10 @@ class Stock(models.Model):
         through='StockProduct',
         related_name='stocks',
     )
+
     def __str__(self):
         return f'{self.products} {self.address}'
+
 
 class StockProduct(models.Model):
     stock = models.ForeignKey(
@@ -42,4 +44,4 @@ class StockProduct(models.Model):
     )
 
     def __str__(self):
-        return f'{self.stock} {self.product} {self.quantity} {self.price}'
+        return f"{self.stock} {self.product} {self.quantity} {self.price}"

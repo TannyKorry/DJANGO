@@ -1,7 +1,7 @@
 from rest_framework import serializers
-import django_filters
+# import django_filters
 
-from .models import *
+from .models import Product, StockProduct, Stock
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -23,7 +23,7 @@ class StockSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Stock
-        fields = ['id', 'address', 'positions' ]
+        fields = ['id', 'address', 'positions']
 
     # настройте сериализатор для склада
 

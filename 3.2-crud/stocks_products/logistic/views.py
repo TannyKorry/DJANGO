@@ -1,3 +1,5 @@
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.viewsets import ModelViewSet
 from django_filters.rest_framework import DjangoFilterBackend
@@ -26,3 +28,8 @@ class StockViewSet(ModelViewSet):
     filterset_fields = ['products', ]
     search_fields = ['products', ]
     ordering_fields = ['address', ]
+
+
+@api_view()
+def sample_view(request):
+    return Response({"message": 'HEY'})

@@ -1,6 +1,6 @@
 from django.contrib import admin
-from django.forms import BaseInlineFormSet
-from .models import *
+# from django.forms import BaseInlineFormSet
+from .models import Product, StockProduct, Stock
 
 # Register your models here.
 
