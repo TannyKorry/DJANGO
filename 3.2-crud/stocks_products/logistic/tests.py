@@ -9,7 +9,7 @@ class SampleTestCase(TestCase):
 
     def test_successful(self):
         client = APIClient()
-        response = client.get('/api/v1/test/')
+        response = client.get('/api/v1/products/')
         self.assertEqual(response.status_code, 200)
 
 
