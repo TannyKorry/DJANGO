@@ -47,11 +47,13 @@ jobs:
           pip install -r requirements.txt
 
       - name: Линтинг
-        run: flake8
+        run:
+          cd 3.2-crud/stocks_products
+          flake8 logistic --exclude logistic/migrations
 
       - name: Тестирование
         run: 
-          cd 3.2-crud/stocks_products
+
           python manage.py test
         env:
           SECRET_KEY: ${{ env.SECRET_KEY }}
