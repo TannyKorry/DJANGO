@@ -48,7 +48,7 @@ jobs:
 
       - name: Линтинг
         run:
-          cd ./3.2-crud/stocks_products |flake8
+          flake8 3.2-crud/stocks_products
 
       - name: Тестирование
         run: 
