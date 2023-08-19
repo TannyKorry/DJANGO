@@ -47,7 +47,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Линтинг
-        run: flake8 logistic --exclude logistic/migrations
+        run: flake8
 
       - name: Тестирование
         run: 
