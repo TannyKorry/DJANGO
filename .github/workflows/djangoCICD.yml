@@ -53,7 +53,7 @@ jobs:
       - name: Тестирование
         run: 
           cd 3.2-crud/stocks_products
-          python manage.py test
+          |python manage.py test
         env:
           SECRET_KEY: ${{ env.SECRET_KEY }}
           DEBUG: ${{ env.DEBUG }}
