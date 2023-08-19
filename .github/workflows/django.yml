@@ -27,5 +27,6 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
+       
         cd 3.2-crud/stocks_products
         python manage.py test
