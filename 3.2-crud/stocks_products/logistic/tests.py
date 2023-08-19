@@ -1,6 +1,7 @@
 from rest_framework.test import APIClient
 from unittest import TestCase
 
+
 class SampleTestCase(TestCase):
     def test_bad_case(self):
         client = APIClient()
@@ -11,5 +12,3 @@ class SampleTestCase(TestCase):
         client = APIClient()
         response = client.get('/api/v1/products/')
         self.assertEqual(response.status_code, 200)
-
-
