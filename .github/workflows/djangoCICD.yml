@@ -49,7 +49,7 @@ jobs:
       - name: Линтинг
         run:
           cd 3.2-crud/stocks_products
-          flake8 logistic --exclude logistic/migrations
+          | flake8
 
       - name: Тестирование
         run: 
