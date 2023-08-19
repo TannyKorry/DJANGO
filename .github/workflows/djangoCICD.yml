@@ -48,12 +48,11 @@ jobs:
 
       - name: Линтинг
         run:
-          cd 3.2-crud/stocks_products
-          | flake8
+          cd 3.2-crud/stocks_products |flake8
 
       - name: Тестирование
         run: 
-
+          cd 3.2-crud/stocks_products
           python manage.py test
         env:
           SECRET_KEY: ${{ env.SECRET_KEY }}
