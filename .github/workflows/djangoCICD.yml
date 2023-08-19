@@ -7,7 +7,7 @@ on:
 
 jobs:
   django-tests:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     env:
       SECRET_KEY: ${{ secrets.SECRET_KEY }}
       DEBUG: "0"
@@ -51,9 +51,9 @@ jobs:
           flake8 3.2-crud/stocks_products
 
       - name: Тестирование
-        run: 
+        run: | 
           cd 3.2-crud/stocks_products
-          |python manage.py test
+          python manage.py test
         env:
           SECRET_KEY: ${{ env.SECRET_KEY }}
           DEBUG: ${{ env.DEBUG }}
